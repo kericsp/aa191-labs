@@ -1,6 +1,6 @@
 let mapOptions = {
-    "mapCenter":[34.0709, -118.444],
-    "zoomLevel":5
+    "mapCenter":[35.6762, 139.6503],
+    "zoomLevel":3
 }
 
 // declare the map
@@ -9,11 +9,6 @@ const map = L.map('the_map').setView(mapOptions.mapCenter, mapOptions.zoomLevel)
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
-
-addMarker(37,-122,'home','home land!', 15)
-addMarker(32,-118,'work','where i work land!', 15)
-addMarker(39,-119,'location 1','random location', 15)
-addMarker(36,-120,'location 2','another random location', 15)
 
 // create a function to add markers
 function addMarker(lat,lng,title,message,zoomLevel){
@@ -34,11 +29,15 @@ function createButtons(lat,lng,title,zoomLevel){
     })
     document.getElementById("contents").appendChild(newButton); 
 }
+
 fetch("map.geojson")
     .then(response => {
-        return response.json();
+        // console.log(response.json())
+        return response.json()
     })
     .then(data =>{
         // Basic Leaflet method to add GeoJSON data
+        console.log(data)
         L.geoJSON(data).addTo(map)
+        map.fitBounds(data.getBounds(), {padding:[10,10]})
     });
