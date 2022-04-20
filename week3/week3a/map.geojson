@@ -1,1 +1,0 @@
-{"type":"FeatureCollection","features":[{"type":"Feature","properties":{"country":"japan","color":"blue"},"geometry":{"type":"Point","coordinates":[137.63671875,36.31512514748051]}},{"type":"Feature","properties":{"country":"taiwan","color":"red"},"geometry":{"type":"Point","coordinates":[121.201171875,24.5271348225978]}}]}

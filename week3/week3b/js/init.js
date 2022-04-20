@@ -18,26 +18,18 @@ function addMarker(lat,lng,title,message,zoomLevel){
     return message
 }
 
-function createButtons(lat,lng,title,zoomLevel){
-    const newButton = document.createElement("button"); 
-    newButton.id = "button"+title; 
-    newButton.innerHTML = title; 
-    newButton.setAttribute("lat",lat); 
-    newButton.setAttribute("lng",lng); 
-    newButton.addEventListener('click', function(){
-        map.flyTo([lat,lng],zoomLevel); 
-    })
-    document.getElementById("contents").appendChild(newButton); 
-}
-
-fetch("map.geojson")
+fetch("map (1).geojson")
     .then(response => {
         // console.log(response.json())
         return response.json()
     })
     .then(data =>{
         // Basic Leaflet method to add GeoJSON data
-        console.log(data)
-        L.geoJSON(data).addTo(map)
-        map.fitBounds(data.getBounds(), {padding:[10,10]})
-    });
+        L.geoJSON(data, {
+            pointToLayer: (feature, latlng) => { 
+                return L.circleMarker(latlng, {color: feature.properties.color})
+            }
+        }).bindPopup(layer => {
+            return layer.feature.properties.place;
+        }).addTo(map);
+});

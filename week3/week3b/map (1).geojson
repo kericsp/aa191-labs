@@ -1,0 +1,47 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "place": "nara",
+                "color": "brown"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    135.84182739257812,
+                    34.68792197920213
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "place": "shin-okubo",
+                "color": "pink"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    139.70043182373047,
+                    35.70118487936181
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "place": "xindian",
+                "color": "green"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    121.54011726379393,
+                    24.967287858613112
+                ]
+            }
+        }
+    ]
+}
