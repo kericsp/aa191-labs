@@ -11,7 +11,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 // create a function to add markers
 function addMarker(data){
     console.log(data)
-    L.marker([data.lat,data.lng]).addTo(map).bindPopup(`<h2>${data.Location}</h2> <h3>${data.OpenEnded}</h3>`)
+    L.marker([data.lat,data.lng]).addTo(map).bindPopup(`<h2>${data.Name}</h2> <h3>${data["What is your favorite thing about this coffee shop?"]}</h3>`)
     createButtons(data.lat,data.lng,data.Location)
     return data
 }
@@ -31,7 +31,7 @@ function createButtons(lat,lng,title){
     }
     
 
-const dataUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vS2WyfKTyZJ-_ja3GGrxoAXwranavyDGXYsxeFUO4nvHpCJrkKhChymXQqUEyhdGLnz9VN6BJv5tOjp/pub?gid=1560504149&single=true&output=csv"
+const dataUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vShPYm1ScYpeo71b3y0DAUh-NKI7SrjVruOcSUFmZ3kDYB_3Q_vWuOIuQNlrvM2HJ-dyN5UGqTvAmcW/pub?output=csv"
 
 function loadData(url){
     Papa.parse(url, {
