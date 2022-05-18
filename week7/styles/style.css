@@ -47,7 +47,7 @@ body{
     grid-area: buttonHome; 
     display:grid; 
     grid-template-columns: repeat(2, 2fr); /* (2)! */
-}
+} 
 
 .coffeebutton{
     text-transform: capitalize;
