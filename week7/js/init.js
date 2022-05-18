@@ -45,7 +45,7 @@ function addMarker(data){
         createButtons(data.lat,data.lng,data.Location)
     }
     else{
-        circleOptions.color = "green"
+        circleOptions.fillColor = "green"
         Destination.addLayer(L.circleMarker([data.lat,data.lng],circleOptions).bindPopup(`<h2>Destination</h2> <h2>${data.Name}</h2> <h3>${data["What is your favorite thing about this coffee shop?"]}</h3>`))
         createButtons(data.lat,data.lng,data.Location)
     }
